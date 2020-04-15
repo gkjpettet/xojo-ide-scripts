@@ -132,6 +132,10 @@ Next p
 If hasReturnValue Then
 header = header + "'" + Chr(13) + "' - Returns: RETURN_DESCRIPTION" + Chr(13)
 End If
+
+// Notes.
+header = header + "'" + Chr(13) + "' - Notes:" + Chr(13) + "' NOTES_TEXT" + Chr(13)
+
 header = header + "///" + Chr(13)
 
 // Prepend the header comment to the body of the method.
