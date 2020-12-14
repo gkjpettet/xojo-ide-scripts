@@ -124,8 +124,8 @@ header = header + "' DESCRIPTION" + Chr(13)
 If params.Ubound >= 0 Then
 header = header + "'" + Chr(13)
 End If
-For Each p As Parameter In params// ' - Parameter PARAM_NAME: PARAM_DESCRIPTION
-header = header + "' - Parameter " + p.Name + ": " + "PARAM_DESCRIPTION" + Chr(13)
+For Each p As Parameter In params// ' - Param PARAM_NAME: PARAM_DESCRIPTION
+header = header + "' - Param " + p.Name + ": " + "PARAM_DESCRIPTION" + Chr(13)
 Next p
 
 // Return value
