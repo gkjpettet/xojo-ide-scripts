@@ -117,33 +117,33 @@ End If
 // =========================
 // Description
 Dim header As String
-header = header + "///" + Chr(13)
-header = header + "' DESCRIPTION" + Chr(13)
+header = header + "/// DESCRIPTION" + Chr(13)
 
 // Parameters.
 If params.Ubound >= 0 Then
-header = header + "'" + Chr(13)
+header = header + "/// " + Chr(13)
 End If
-For Each p As Parameter In params// ' - Param PARAM_NAME: PARAM_DESCRIPTION
-header = header + "' - Param " + p.Name + ": " + "PARAM_DESCRIPTION" + Chr(13)
+For Each p As Parameter In params// /// - Param PARAM_NAME: PARAM_DESCRIPTION
+header = header + "/// - [" + p.Name + "]: " + "PARAM_DESCRIPTION" + Chr(13)
 Next p
 
 // Return value
 If hasReturnValue Then
-header = header + "'" + Chr(13) + "' - Returns: RETURN_DESCRIPTION" + Chr(13)
+header = header + "///" + Chr(13) + "/// - Returns: RETURN_DESCRIPTION" + Chr(13)
 End If
 
 // Notes.
-header = header + "'" + Chr(13) + "' - Notes:" + Chr(13) + "' NOTES_TEXT" + Chr(13)
+header = header + "///" + Chr(13) + "/// - Notes:" + Chr(13) + "/// NOTES_TEXT" + Chr(13)
 
-header = header + "///" + Chr(13)
+// Add some spacing at after the header.
+header = header + Chr(13)
 
 // Prepend the header comment to the body of the method.
 Text = header + Text
 
 // Select the DESCRIPTION field in the comment header.
-Dim descriptionStart As Integer = Text.InStr("' DESCRIPTION")
+Dim descriptionStart As Integer = Text.InStr("/// DESCRIPTION")
 If descriptionStart > 0 Then
-SelStart = descriptionStart + 1
-SelLength = SelStart + 5
+SelStart = descriptionStart + 3
+SelLength = SelStart + 7
 End If
