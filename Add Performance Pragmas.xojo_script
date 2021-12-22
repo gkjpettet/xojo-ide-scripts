@@ -5,7 +5,9 @@ Var current() As String = Text.Split(EndOfLine)
 
 // Construct the pragmas to insert.
 Var pragmas() As String
+pragmas.Add("#If Not TargetWeb")
 pragmas.Add("#Pragma DisableBoundsChecking")
+pragmas.Add("#EndIf")
 pragmas.Add("#Pragma NilObjectChecking False")
 pragmas.Add("#Pragma StackOverflowChecking False")
 
