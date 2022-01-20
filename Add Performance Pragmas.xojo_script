@@ -6,10 +6,11 @@ Var current() As String = Text.Split(EndOfLine)
 // Construct the pragmas to insert.
 Var pragmas() As String
 pragmas.Add("#If Not TargetWeb")
-pragmas.Add("#Pragma DisableBoundsChecking")
+pragmas.Add("#Pragma DisableBackgroundTasks")
 pragmas.Add("#EndIf")
 pragmas.Add("#Pragma NilObjectChecking False")
 pragmas.Add("#Pragma StackOverflowChecking False")
+pragmas.Add("#Pragma DisableBoundsChecking")
 
 // We want to insert the pragmas at the top of the method, after any comment header that may be
 // present. My comment headers begin with `///`.
